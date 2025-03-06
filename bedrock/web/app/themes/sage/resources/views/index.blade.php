@@ -3,6 +3,8 @@
 @section('content')
   @include('partials.page-header')
 
+  <h1>Hello, World! Welcome to my site!</h1>
+
   @if (! have_posts())
     <x-alert type="warning">
       {!! __('Sorry, no results were found.', 'sage') !!}

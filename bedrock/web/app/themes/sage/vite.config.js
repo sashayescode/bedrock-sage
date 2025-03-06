@@ -4,7 +4,7 @@ import laravel from 'laravel-vite-plugin'
 import { wordpressPlugin, wordpressThemeJson } from '@roots/vite-plugin';
 
 export default defineConfig({
-  base: '/app/themes/sage/public/build/',
+  base: 'http://lyfter-garage-opener.test/app/themes/sage/public/build/',
   plugins: [
     tailwindcss(),
     laravel({

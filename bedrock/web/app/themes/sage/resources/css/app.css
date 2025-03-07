@@ -1,3 +1,95 @@
 @import "tailwindcss" theme(static);
+@import '../fonts/fonts.css';
 @source "../views/";
 @source "../../app/";
+
+@layer base {
+    html {
+        font-family: 'Gabarito', sans-serif;
+    }
+
+    :root {
+        --font-heading: 'Gabarito', sans-serif;
+        --font-weight-bold: 700;
+        --font-weight-normal: 400;
+        --line-height-tight: 100%;
+        --line-height-normal: 110%;
+        --line-height-big: 170%;
+        --letter-spacing-normal: 0%;
+    }
+
+    .heading2xl {
+
+        font-size: 90px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .headingxl {
+
+        font-size: 52px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .headinglg {
+
+        font-size: 36px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .headingmd {
+
+        font-size: 26px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .headingsm {
+
+        font-size: 18px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .headingxs {
+
+        font-size: 14px;
+        font-weight: var(--font-weight-bold);
+        line-height: var(--line-height-normal);
+        letter-spacing: var(--letter-spacing-normal);
+    }
+
+    .paragraphlg {
+
+        font-size: 20px;
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-big);
+        letter-spacing: var(--letter-spacing-normal);
+
+    }
+
+    .paragraphmd {
+
+        font-size: 18px;
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-big);
+        letter-spacing: var(--letter-spacing-normal);
+
+    }
+
+    .paragraphsm {
+
+        font-size: 14px;
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-big);
+        letter-spacing: var(--letter-spacing-normal);
+
+    }
+}

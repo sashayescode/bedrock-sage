@@ -3,7 +3,9 @@
 @section('content')
   @include('partials.page-header')
 
-  <h1>Hello, World! Welcome to my site huh!</h1>
+  <h1 class="heading2xl text-red">This is a test</h1>
+
+  <h1 class="text-heading2xl">Hello, World! Welcome to my site huh!</h1>
 
   @if (! have_posts())
     <x-alert type="warning">

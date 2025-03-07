@@ -11,6 +11,7 @@
     :root {
         --font-heading: 'Gabarito', sans-serif;
         --font-weight-bold: 700;
+        --font-weight-medium: 500;
         --font-weight-normal: 400;
         --line-height-tight: 100%;
         --line-height-normal: 110%;
@@ -89,6 +90,23 @@
         font-size: 14px;
         font-weight: var(--font-weight-normal);
         line-height: var(--line-height-big);
+        letter-spacing: var(--letter-spacing-normal);
+
+    }
+
+    .hyperlink {
+
+        font-size: 18px;
+        font-weight: var(--font-weight-normal);
+        line-height: var(--line-height-big);
+        letter-spacing: var(--letter-spacing-normal);
+        text-decoration-line: underline;
+    }
+
+    .menu-item {
+        font-size: 20px;
+        font-weight: var(--font-weight-medium);
+        line-height: var(--line-height-normal);
         letter-spacing: var(--letter-spacing-normal);
 
     }

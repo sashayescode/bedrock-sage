@@ -1,7 +1,14 @@
-@import "tailwindcss" theme(static);
+@import "tailwindcss";
 @import '../fonts/fonts.css';
 @source "../views/";
 @source "../../app/";
+
+@theme {
+    --color-buttonGreen: #00D1B2;
+    --color-buttonBlack: #000000;
+    --color-buttonGrey: #0000000D;
+    --color-roseBackground: #FF33664D;
+  }
 
 @layer base {
     html {

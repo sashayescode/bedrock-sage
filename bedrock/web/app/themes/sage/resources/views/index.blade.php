@@ -3,12 +3,8 @@
 @section('content')
   @include('partials.page-header')
 
-  <h1 class="heading2xl text-red">This is a test</h1>
-<x-button></x-button>
-
-<div class="w-fit">
-  <button type="button" class="elementText w-[142px] h-[60px] rounded-[30px] bg-green-400 py-5 px-7">Hello</button>
-</div>
+  <h1 class=" bg-midnight heading2xl text-red">This is a test</h1>
+  <x-button buttonText="100" color="green" />
 
   @if (! have_posts())
     <x-alert type="warning">

@@ -7,12 +7,17 @@
     --color-buttonGreen: #00D1B2;
     --color-buttonBlack: #000000;
     --color-buttonGrey: #0000000D;
-    --color-roseBackground: #FF33664D;
-  }
+    --color-roseBackground: #FF33661A;
+    --color-backgroundMint: #00D1B21A;
+}
 
 @layer base {
     html {
         font-family: 'Gabarito', sans-serif;
+    }
+
+    a {
+        text-decoration: none;
     }
 
     :root {
@@ -115,6 +120,10 @@
         font-weight: var(--font-weight-medium);
         line-height: var(--line-height-normal);
         letter-spacing: var(--letter-spacing-normal);
-
     }
+    p{
+        margin: 0;
+        padding: 0;
+    }
+      
 }

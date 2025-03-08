@@ -5,7 +5,8 @@
     $svgStyles = [
     'green'=>'text-white group-hover:text-buttonGreen',
     'black'=>'text-white group-hover:text-buttonBlack',
-    'grey'=>'text-buttonBlack'
+    'grey'=>'text-buttonBlack',
+    'colorGreentoWhite'=>'text-buttonGreen group-hover:text-white'
 
 ];
 

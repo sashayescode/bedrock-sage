@@ -32,14 +32,14 @@ add_filter('block_editor_settings_all', function ($settings) {
  * @return void
  */
 add_filter('admin_head', function () {
-    if (! get_current_screen()?->is_block_editor()) {
+    if (!get_current_screen()?->is_block_editor()) {
         return;
     }
 
     $dependencies = json_decode(Vite::content('editor.deps.json'));
 
     foreach ($dependencies as $dependency) {
-        if (! wp_script_is($dependency)) {
+        if (!wp_script_is($dependency)) {
             wp_enqueue_script($dependency);
         }
     }
@@ -55,11 +55,11 @@ add_filter('admin_head', function () {
  * @return void
  */
 add_action('enqueue_block_assets', function () {
-    if (! is_admin() || ! get_current_screen()?->is_block_editor()) {
+    if (!is_admin() || !get_current_screen()?->is_block_editor()) {
         return;
     }
 
-    if (! Vite::isRunningHot()) {
+    if (!Vite::isRunningHot()) {
         return;
     }
 
@@ -153,6 +153,14 @@ add_action('after_setup_theme', function () {
         'script',
         'style',
     ]);
+
+    add_theme_support('custom-logo', [
+        'height' => 33,
+        'width' => 166,
+        'flex-height' => true,
+        'flex-width' => true,
+    ]);
+
 
     /**
      * Enable selective refresh for widgets in customizer.

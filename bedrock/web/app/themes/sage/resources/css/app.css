@@ -1,7 +1,8 @@
 @import "tailwindcss";
 @import '../fonts/fonts.css';
-@source "../views/";
-@source "../../app/";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @theme {
     --color-buttonGreen: #00D1B2;
@@ -13,8 +14,10 @@
 }
 
 @layer base {
-    html {
+    body {
         font-family: 'Gabarito', sans-serif;
+        padding: 0;
+        margin: 0;
     }
 
     a {
@@ -122,9 +125,17 @@
         line-height: var(--line-height-normal);
         letter-spacing: var(--letter-spacing-normal);
     }
-    p{
+
+    p {
         margin: 0;
         padding: 0;
     }
-      
+
+}
+
+
+@layer components {
+    .my-wrapper {
+        @apply px-4 sm:px-10 md:px-16 lg:px-24 xl:px-36 2xl:px-[184px];
+    }
 }

@@ -11,6 +11,8 @@
     --color-roseBackground: #FF33661A;
     --color-backgroundMint: #00D1B21A;
     --color-backgroundBabyBlue: #4285F41A;
+    --color-iconGrey: #0000004D;
+    --color-borderGrey: #0000001A;
 }
 
 @layer base {

@@ -58,21 +58,3 @@ collect(['setup', 'filters'])
             );
         }
     });
-
-
-/**
- * Get image ID from the image URL.
- *
- * @param string $image_url The URL of the image.
- * @return array An array containing image ID and image URL.
- */
-function get_image_data_by_url($image_url) {
-    $image_id = attachment_url_to_postid($image_url);
-    $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
-
-    return [
-        'id' => $image_id,
-        'url' => $image_url
-    ];
-}
-

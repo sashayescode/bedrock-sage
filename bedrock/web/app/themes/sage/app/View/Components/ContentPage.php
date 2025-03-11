@@ -15,6 +15,8 @@ class ContentPage extends Component
     public string $buttonRightText;
     public string $buttonLeftText;
 
+    public array $images;
+
     const VARIANT_IMAGES = [
         'blue' => [
             'background' => 'bg-backgroundBabyBlue',
@@ -31,8 +33,8 @@ class ContentPage extends Component
     ];
 
     const IMAGES_URL = [
-        'phone_right'=> 'http://lyfter-garage-opener.test/app/uploads/2025/03/phone-image-right.png',
-        'phone_left'=> 'http://lyfter-garage-opener.test/app/uploads/2025/03/phone-image-left.png',
+        'phone_right' => 'http://lyfter-garage-opener.test/app/uploads/2025/03/phone-image-right.png',
+        'phone_left' => 'http://lyfter-garage-opener.test/app/uploads/2025/03/phone-image-left.png',
         'vector-blue' => 'http://lyfter-garage-opener.test/app/uploads/2025/03/vector-blue.png',
         'vector-pink' => 'http://lyfter-garage-opener.test/app/uploads/2025/03/vector-pink.png',
     ];
@@ -40,8 +42,8 @@ class ContentPage extends Component
     public function __construct(
         ?string $header = null,
         ?string $paragraph = null,
-        ?string $variant = 'blue', 
-        ?string $buttonRightText = 'Button', 
+        ?string $variant = 'blue',
+        ?string $buttonRightText = 'Button',
         ?string $buttonLeftText = 'Button'
     ) {
         $this->header = $header ?? 'This is a big header';
@@ -50,12 +52,16 @@ class ContentPage extends Component
         $this->buttonRightText = $buttonRightText;
         $this->buttonLeftText = $buttonLeftText;
 
+        $this->images = self::IMAGES_URL;
+
         $this->variantImage = self::VARIANT_IMAGES[$variant] ?? self::VARIANT_IMAGES['blue'];
     }
 
     public function render(): View|Closure|string
     {
-        return view('components.content-page');
+        return view('components.content-page', [
+            'images' => $this->images
+        ]);
     }
 }
 

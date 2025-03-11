@@ -1,4 +1,4 @@
-@props(['header', 'paragraph', 'variant', 'variantImage', 'buttonRightText', 'buttonLeftText'])
+@props(['header', 'paragraph', 'variant', 'variantImage', 'buttonRightText', 'buttonLeftText', 'images'])
 
 <div
     class="py-[120px] flex space-x-[19px] {{ $variant === 'pink' ? 'flex-row-reverse space-x-reverse my-wrapper' : '' }}">
@@ -20,10 +20,10 @@
             <div class="relative overflow-visible">
 
                 <div class="w-[635px] h-[682px] {{ $variantImage['background'] }} rounded-[20px]"></div>
-                <img src="{{ get_template_directory_uri() }}/resources/images/vector-{{ $variantImage['image'] }}.png"
+                <img src="{{ $images['vector-' . $variantImage['image']] }}"
                     class="absolute left-[-90px] top-[-50px] w-[724px] h-[800px] max-w-none max-h-none object-contain"
                     alt="Vector Blue">
-                <img src="{{ get_template_directory_uri() }}/resources/images/phone-image-{{ $variantImage['phoneImage'] }}.png"
+                <img src="{{ $images['phone_' . $variantImage['phoneImage']] }}"
                     class="absolute {{ $variantImage['phoneImagePosition'] }} z-10">
             </div>
         </div>

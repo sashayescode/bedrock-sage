@@ -13,6 +13,7 @@
     --color-backgroundBabyBlue: #4285F41A;
     --color-iconGrey: #0000004D;
     --color-borderGrey: #0000001A;
+    --color-menuItemUnderline: #FF3366;
 }
 
 @layer base {

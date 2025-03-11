@@ -59,11 +59,20 @@ collect(['setup', 'filters'])
         }
     });
 
-function lyfter_theme_options()
-{
-    add_option('lyfter_label', 'Default Label');
-    add_option('lyfter_heading', 'Everyday Convenience');
-    add_option('lyfter_description', 'At Lyfter, we make smart devices to automate your home...');
+
+/**
+ * Get image ID from the image URL.
+ *
+ * @param string $image_url The URL of the image.
+ * @return array An array containing image ID and image URL.
+ */
+function get_image_data_by_url($image_url) {
+    $image_id = attachment_url_to_postid($image_url);
+    $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
+
+    return [
+        'id' => $image_id,
+        'url' => $image_url
+    ];
 }
-add_action('after_setup_theme', 'lyfter_theme_options');
 

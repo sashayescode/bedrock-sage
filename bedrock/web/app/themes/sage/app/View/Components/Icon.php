@@ -9,8 +9,7 @@ use Illuminate\View\Component;
 class Icon extends Component
 {
     public string $icon;
-
-    public array $icons = [];
+    public string $color;
 
     const SVG_STYLES = [
         'green' => 'text-white group-hover:text-buttonGreen',
@@ -28,28 +27,38 @@ class Icon extends Component
         'house' => 'house-lock.svg',
         'chevron-right' => 'chevron-right.svg',
     ];
+
     public function __construct(
         ?string $icon = null,
+        ?string $color = null
     ) {
-        $this->icon = $icon ?? 'empty';
+        $this->icon = $icon ?? '';
+        $this->color = isset(self::SVG_STYLES[$color]) ? $color : 'green';
     }
 
-    public function getIcons()
+    protected function getIconPath(): ?string
     {
-        $iconPath = self::SVG_ICONS[$this->icon] ?? null;
-        if ($iconPath) {
-            $this->icon = asset("resources/icons/{$iconPath}");
-        } else {
-            $this->icon = 'empty';
+        $iconFile = self::SVG_ICONS[$this->icon] ?? null;
+        if (!$iconFile) {
+            return null;
         }
 
+        $iconPath = resource_path('icons/' . $iconFile);
+
+        return file_exists($iconPath) ? file_get_contents($iconPath) : null;
     }
+
+    protected function getIconStyle(): string
+    {
+        return self::SVG_STYLES[$this->color] ?? self::SVG_STYLES['green'];
+    }
+
 
     public function render(): View|Closure|string
     {
-        return view('components.icon');
+        return view('components.icon', [
+            'iconSvg' => $this->getIconPath(),
+            'stylingSvg' => $this->getIconStyle(),
+        ]);
     }
 }
-
-
-//finish component think shall i pass 1 icon or all, double-check

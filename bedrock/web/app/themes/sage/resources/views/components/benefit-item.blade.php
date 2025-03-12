@@ -1,11 +1,11 @@
-@props(['icon' => 'warehouse', 'header' => '', 'paragraph' => ''])
+@props(['icon', 'header', 'paragraph'])
 
 <div class="group relative">
     <div
         class="group relative p-[38px] ease-out duration-700 transition-all border border-borderGrey rounded-[20px] group-hover:scale-y-[1.05]">
         <x-icon icon="chevron-right" color="chevronIcon"></x-icon>
         <div
-            class="relative flex items-center justify-center size-[70px] mb-7 text-buttonGreen 
+            class="relative bg-backgroundMint rounded-full flex items-center justify-center size-[70px] mb-7 text-buttonGreen 
                 transition-all duration-300 ease-out opacity-80 group-hover:opacity-100 
                 group-hover:scale-110">
 

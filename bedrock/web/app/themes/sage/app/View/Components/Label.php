@@ -8,13 +8,13 @@ use Illuminate\View\Component;
 
 class Label extends Component
 {
-    public string $icon;
+    public ?string $icon;
     public string $text;
     public function __construct(
         ?string $icon = null,
         ?string $text = null,
     ) {
-        $this->icon = $icon ?? 'empty';
+        $this->icon = $icon ?? null;
         $this->text = $text ?? 'Label';
     }
 

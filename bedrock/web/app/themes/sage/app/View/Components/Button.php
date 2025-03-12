@@ -11,9 +11,6 @@ class Button extends Component
     public string $buttonText;
     public string $color;
     public string $icon;
-    public string $styleButton;
-    public string $styleHover;
-
     const STYLES_BUTTON = [
         'green' => 'bg-buttonGreen text-white hover:text-buttonGreen',
         'black' => 'bg-buttonBlack text-white hover:text-buttonBlack',
@@ -34,14 +31,27 @@ class Button extends Component
         $this->buttonText = $buttonText ?? 'Default';
         $this->color = $color ?? 'green';
         $this->icon = $icon ?? 'warehouse';
-        $this->styleButton = self::STYLES_BUTTON[$color] ?? self::STYLES_BUTTON['green'];
-        $this->styleHover = self::STYLES_HOVER[$color] ?? self::STYLES_HOVER['black'];
+    }
 
+    protected function getStyleButton(): string
+    {
+        return self::STYLES_BUTTON[$this->color] ?? self::STYLES_BUTTON['green'];
+    }
+
+    protected function getStyleHover(): string
+    {
+        return self::STYLES_HOVER[$this->color] ?? self::STYLES_HOVER['black'];
     }
 
 
     public function render(): View|Closure|string
     {
-        return view('components.button');
+        return view(
+            'components.button',
+            [
+                'styleButton' => $this->getStyleButton(),
+                'styleHover' => $this->getStyleHover(),
+            ]
+        );
     }
 }
